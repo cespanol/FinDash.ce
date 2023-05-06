@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+  <script>
+    function openPlaidLink() {
+      var handler = Plaid.create({
+        clientName: 'Your App Name',
+        env: 'sandbox', // Change to 'development' or 'production' when necessary
+        key: 'YOUR_PLAID_PUBLIC_KEY',
+        product: ['auth', 'transactions'], // Specify the Plaid products you want to use
+        onSuccess: function(public_token, metadata) {
+          // Send the public_token to the Streamlit app
+          window.parent.postMessage({public_token: public_token}, "*");
+        },
+        onExit: function(err, metadata) {
+          // The user exited the Link flow
+        }
+      });
+
+      handler.open();
+    }
+  </script>
+</head>
+<body>
+  <button onclick="openPlaidLink()">Connect to Plaid</button>
+</body>
+</html>
