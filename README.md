@@ -17,6 +17,14 @@ Before running the application, make sure to install the required Python package
 ```bash
 pip install streamlit PyPDF2 langchain werkzeug
 ```
+or
+
+```bash
+pip install -r requirements.txt
+```
+
+
+
 
 Usage
 To run the application, simply run the following command:
@@ -26,13 +34,22 @@ streamlit run Dashboard.py
 ```
 The application will open in your default web browser. If not, open your browser and navigate to http://localhost:8501.
 
+
+
+
 Application Structure
+```bash
 get_openai_api_key(): Function to obtain the OpenAI API key.
 login(): Function to handle user login and authentication.
 main(): The main function that initializes the Streamlit application and sets up the user interface.
-Pages
-The application includes the following pages:
+```
 
+
+
+Pages:
+
+The application includes the following pages:
+```bash
 Accounts: (Plaid API connection is currently commented out. To enable, uncomment the relevant lines and follow the instructions to integrate Plaid.)
 Investments: Displays investment account information and allocation.
 Transactions: Lists financial transactions.
@@ -40,8 +57,12 @@ Dashboard: Provides a general overview of the user's financial status.
 Categories: Manages financial categories.
 Recurrings: Manages recurring financial transactions.
 Savings: Displays and manages the user's savings.
+```
+
+
 Note
 The Plaid API integration is currently commented out in the code. Need help integrating the client
+
 
 
 Goals: Create a user financial dashboard. Use that to create an accounting financial dashboard.
@@ -50,22 +71,6 @@ integrate openai, plaid, langchain
 
 
 
-Application Structure
-get_openai_api_key(): Function to obtain the OpenAI API key.
-login(): Function to handle user login and authentication.
-main(): The main function that initializes the Streamlit application and sets up the user interface.
-Pages
-The application includes the following pages:
-
-Accounts: (Plaid API connection is currently commented out. To enable, uncomment the relevant lines and follow the instructions to integrate Plaid.)
-Investments: Displays investment account information and allocation.
-Transactions: Lists financial transactions.
-Dashboard: Provides a general overview of the user's financial status.
-Categories: Manages financial categories.
-Recurrings: Manages recurring financial transactions.
-Savings: Displays and manages the user's savings.
-Note
-The Plaid API integration is currently commented out in the code. To enable it, uncomment the relevant lines and follow the instructions to integrate Plaid.
 
 
 
